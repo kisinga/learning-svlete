@@ -1,0 +1,1 @@
+This is a repo decumenting my journey experimenting with [Svelte](https://svelte.dev). Is it a framework? Is is a compiler? Is it both? To find out I started with [this temmplate](https://github.com/sveltejs/template).
