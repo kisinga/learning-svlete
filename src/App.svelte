@@ -3,23 +3,27 @@
 		firstName: string;
 		lastName: string;
 		belt: string;
+		id: number;
 	};
 
-	let people: [Person] = [
+	let people: Person[] = [
 		{
 			belt: "blue",
 			firstName: "Kamana",
 			lastName: "Kisinga",
+			id: 0,
 		},
 		{
 			belt: "blue",
 			firstName: "Sam",
 			lastName: "Champee",
+			id: 1,
 		},
 		{
 			belt: "black",
 			firstName: "Francis",
 			lastName: "Maish",
+			id: 2,
 		},
 	];
 </script>
@@ -47,7 +51,7 @@
 </style>
 
 <main>
-	{#each people as person}
+	{#each people as person (person.id)}
 		<div>
 			<h4>{person.firstName}</h4>
 			<p>{person.belt}</p>
