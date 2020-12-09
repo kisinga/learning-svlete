@@ -5,24 +5,23 @@
 		belt: string;
 	};
 
-	let person: Person = {
-		belt: "black",
-		firstName: "Kamana",
-		lastName: "Kisinga",
-	};
-	$: fullName = `${person.firstName} ${person.lastName}`;
-	$: console.log(person.firstName);
-
-	const handleClick = () => {
-		if (person.belt == "black") {
-			person.belt = "blue";
-			return;
-		}
-		person.belt = "black";
-	};
-	const handleInput = function (e) {
-		person.belt = e.target.value;
-	};
+	let people: [Person] = [
+		{
+			belt: "blue",
+			firstName: "Kamana",
+			lastName: "Kisinga",
+		},
+		{
+			belt: "blue",
+			firstName: "Sam",
+			lastName: "Champee",
+		},
+		{
+			belt: "black",
+			firstName: "Francis",
+			lastName: "Maish",
+		},
+	];
 </script>
 
 <style>
@@ -48,10 +47,10 @@
 </style>
 
 <main>
-	<h1>Hello {fullName}!</h1>
-	<p style="color:{person.belt}">{person.belt} Belt</p>
-	<button on:click={handleClick}>Update belt</button>
-	<input type="text" bind:value={person.belt} />
-	<input type="text" bind:value={person.firstName} />
-	<input type="text" bind:value={person.lastName} />
+	{#each people as person}
+		<div>
+			<h4>{person.firstName}</h4>
+			<p>{person.belt}</p>
+		</div>
+	{/each}
 </main>
