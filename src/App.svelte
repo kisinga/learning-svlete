@@ -1,13 +1,15 @@
-<script>
+<script lang="ts">
 	let name = "Kisinga";
 	let belt = "black";
-
 	const handleClick = () => {
 		if (belt == "black") {
 			belt = "blue";
 			return;
 		}
 		belt = "black";
+	};
+	const handleInput = function (e) {
+		belt = e.target.value;
 	};
 </script>
 
@@ -35,6 +37,8 @@
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>{belt} Belt</p>
+	<p style="color:{belt}">{belt} Belt</p>
 	<button on:click={handleClick}>Update belt</button>
+	<!-- <input type="text" on:input={handleInput} value={belt} /> -->
+	<input type="text" bind:value={belt} />
 </main>
