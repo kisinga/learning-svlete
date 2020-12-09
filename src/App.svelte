@@ -1,15 +1,27 @@
 <script lang="ts">
-	let name = "Kisinga";
-	let belt = "black";
+	type Person = {
+		firstName: string;
+		lastName: string;
+		belt: string;
+	};
+
+	let person: Person = {
+		belt: "black",
+		firstName: "Kamana",
+		lastName: "Kisinga",
+	};
+	$: fullName = `${person.firstName} ${person.lastName}`;
+	$: console.log(person.firstName);
+
 	const handleClick = () => {
-		if (belt == "black") {
-			belt = "blue";
+		if (person.belt == "black") {
+			person.belt = "blue";
 			return;
 		}
-		belt = "black";
+		person.belt = "black";
 	};
 	const handleInput = function (e) {
-		belt = e.target.value;
+		person.belt = e.target.value;
 	};
 </script>
 
@@ -36,9 +48,10 @@
 </style>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p style="color:{belt}">{belt} Belt</p>
+	<h1>Hello {fullName}!</h1>
+	<p style="color:{person.belt}">{person.belt} Belt</p>
 	<button on:click={handleClick}>Update belt</button>
-	<!-- <input type="text" on:input={handleInput} value={belt} /> -->
-	<input type="text" bind:value={belt} />
+	<input type="text" bind:value={person.belt} />
+	<input type="text" bind:value={person.firstName} />
+	<input type="text" bind:value={person.lastName} />
 </main>
