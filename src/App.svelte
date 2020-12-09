@@ -26,6 +26,11 @@
 			id: 2,
 		},
 	];
+
+	const deletePerson = (id) => {
+		console.log(id);
+		people = people.filter((p) => p.id != id);
+	};
 </script>
 
 <style>
@@ -55,6 +60,12 @@
 		<div>
 			<h4>{person.firstName}</h4>
 			<p>{person.belt}</p>
+			<button
+				on:click={() => {
+					deletePerson(person.id);
+				}}>delete</button>
 		</div>
+	{:else}
+		<p>There are no people to display</p>
 	{/each}
 </main>
