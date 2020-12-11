@@ -5,7 +5,7 @@
 		belt: string;
 		id: number;
 	};
-
+	let num = 20;
 	let people: Person[] = [
 		{
 			belt: "blue",
@@ -60,6 +60,11 @@
 		<div>
 			<h4>{person.firstName}</h4>
 			<p>{person.belt}</p>
+			{#if person.belt == 'black'}
+				<p>Master ninja</p>
+			{:else}
+				<p>On the way to greatness</p>
+			{/if}
 			<button
 				on:click={() => {
 					deletePerson(person.id);
