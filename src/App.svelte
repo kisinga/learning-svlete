@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Modal from "./Modal.svelte";
+	import AddPersonForm from "./AddPersonForm.svelte";
 
 	type Person = {
 		firstName: string;
@@ -61,15 +62,16 @@
 </style>
 
 <Modal
-	message="Hello there"
-	isPromo={true}
+	isPromo={false}
 	{showModal}
 	on:click={() => {
 		toggleModal();
-	}} />
+	}}>
+	<AddPersonForm />
+</Modal>
 <main>
 	<button
-		on:click|once={() => {
+		on:click={() => {
 			toggleModal();
 		}}>Open Modal</button>
 	{#each people as person (person.id)}

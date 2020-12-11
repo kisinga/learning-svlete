@@ -1,6 +1,6 @@
 <script>
-    export let message =
-        "Hello beautiful ninja(I dont know what a female nija is called)\n Update: kunoichi! Hello beautiful kunoichi";
+    // export let message =
+    //     "Hello beautiful ninja(I dont know what a female nija is called)\n Update: kunoichi! Hello beautiful kunoichi";
     export let showModal = false;
     export let isPromo = false;
     const toggleModal = () => {
@@ -31,6 +31,9 @@
 
 {#if showModal}
     <div class="backdrop" class:promo={isPromo} on:click|self>
-        <div class="modal">{message}</div>
+        <div class="modal">
+            <slot />
+            <slot name="title" />
+        </div>
     </div>
 {/if}
