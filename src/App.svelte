@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Modal from "./Modal.svelte";
+
 	type Person = {
 		firstName: string;
 		lastName: string;
@@ -55,6 +57,7 @@
 	}
 </style>
 
+<Modal />
 <main>
 	{#each people as person (person.id)}
 		<div>
