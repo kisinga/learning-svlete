@@ -7,7 +7,7 @@
 		belt: string;
 		id: number;
 	};
-	let num = 20;
+	let showModal = false;
 	let people: Person[] = [
 		{
 			belt: "blue",
@@ -33,6 +33,9 @@
 		console.log(id);
 		people = people.filter((p) => p.id != id);
 	};
+	const toggleModal = () => {
+		showModal = !showModal;
+	};
 </script>
 
 <style>
@@ -57,8 +60,18 @@
 	}
 </style>
 
-<Modal message="Hello there" isPromo={true} />
+<Modal
+	message="Hello there"
+	isPromo={true}
+	{showModal}
+	on:click={() => {
+		toggleModal();
+	}} />
 <main>
+	<button
+		on:click={() => {
+			toggleModal();
+		}}>Open Modal</button>
 	{#each people as person (person.id)}
 		<div>
 			<h4>{person.firstName}</h4>
