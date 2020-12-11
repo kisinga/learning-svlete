@@ -69,7 +69,7 @@
 	}} />
 <main>
 	<button
-		on:click={() => {
+		on:click|once={() => {
 			toggleModal();
 		}}>Open Modal</button>
 	{#each people as person (person.id)}
