@@ -57,7 +57,7 @@
 	}
 </style>
 
-<Modal />
+<Modal message="Hello there" isPromo={true} />
 <main>
 	{#each people as person (person.id)}
 		<div>

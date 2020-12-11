@@ -3,3 +3,9 @@ and feeding my thirst for knowledge (or curiosity). Having already worked extens
 I love angular, BTW  
 Is it a framework? Is is a compiler? Is it both? To find out I started with [this temmplate](https://github.com/sveltejs/template).
 I am using a nice set of [youtube tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO) by "The Net Ninja"
+
+#Impressions (Mostly in Comparison to Angular)
+**Day 1**  
+It rebuilds instantly on save. Maybe this is more related to rollup, but still, I dig
+**Day 3**  
+Coming from angular, its hilarious how familiar this is. The syntax is definitely different, but so far I find it more expressive
