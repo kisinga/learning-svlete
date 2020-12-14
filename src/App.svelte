@@ -3,8 +3,7 @@
 	import AddPersonForm from "./AddPersonForm.svelte";
 
 	type Person = {
-		firstName: string;
-		lastName: string;
+		name: string;
 		belt: string;
 		id: number;
 	};
@@ -12,20 +11,17 @@
 	let people: Person[] = [
 		{
 			belt: "blue",
-			firstName: "Kamana",
-			lastName: "Kisinga",
+			name: "Kamana",
 			id: 0,
 		},
 		{
 			belt: "blue",
-			firstName: "Sam",
-			lastName: "Champee",
+			name: "Sam",
 			id: 1,
 		},
 		{
 			belt: "black",
-			firstName: "Francis",
-			lastName: "Maish",
+			name: "Francis",
 			id: 2,
 		},
 	];
@@ -36,6 +32,11 @@
 	};
 	const toggleModal = () => {
 		showModal = !showModal;
+	};
+	const addPerson = (e) => {
+		const person = e.detail;
+		people = [person, ...people];
+		showModal = false;
 	};
 </script>
 
@@ -67,7 +68,7 @@
 	on:click={() => {
 		toggleModal();
 	}}>
-	<AddPersonForm />
+	<AddPersonForm on:addPerson={addPerson} />
 </Modal>
 <main>
 	<button
@@ -76,7 +77,7 @@
 		}}>Open Modal</button>
 	{#each people as person (person.id)}
 		<div>
-			<h4>{person.firstName}</h4>
+			<h4>{person.name}</h4>
 			<p>{person.belt}</p>
 			{#if person.belt == 'black'}
 				<p>Master ninja</p>
