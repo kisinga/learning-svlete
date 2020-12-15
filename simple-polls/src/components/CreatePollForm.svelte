@@ -4,16 +4,20 @@
     let dispatch = createEventDispatcher();
 
     import Button from "../shared/Button.svelte";
+    import type { Poll } from "../shared/Models.svelte";
 
-    let fields = {
+    let fields: Poll = {
         question: "",
-        anserA: "",
-        anserB: "",
+        answerA: "",
+        answerB: "",
+        votesA: 0,
+        votesB: 0,
+        id: Math.random(),
     };
     let errors = {
         question: "",
-        anserA: "",
-        anserB: "",
+        answerA: "",
+        answerB: "",
     };
     let valid = false;
     const submitHandler = () => {
@@ -27,23 +31,23 @@
         }
 
         // validate anser a
-        if (fields.anserA.trim().length < 1) {
+        if (fields.answerA.trim().length < 1) {
             valid = false;
-            errors.anserA = "answer a cannot be empty";
+            errors.answerA = "answer a cannot be empty";
         } else {
-            errors.anserA = "";
+            errors.answerA = "";
         }
 
         // validate anser b
-        if (fields.anserB.trim().length < 1) {
+        if (fields.answerB.trim().length < 1) {
             valid = false;
-            errors.anserB = "answer b cannot be empty";
+            errors.answerB = "answer b cannot be empty";
         } else {
-            errors.anserB = "";
+            errors.answerB = "";
         }
 
         if (valid) {
-            let poll = { ...fields, votesA: 0, votesB: 0, id: Math.random() };
+            let poll = { ...fields };
             dispatch("add", poll);
         }
     };
@@ -81,13 +85,13 @@
     </div>
     <div class="form-field">
         <label for="anser-a">Answer A</label>
-        <input type="text" id="anser-a" bind:value={fields.anserA} />
-        <div class="error">{errors.anserA}</div>
+        <input type="text" id="anser-a" bind:value={fields.answerA} />
+        <div class="error">{errors.answerA}</div>
     </div>
     <div class="form-field">
         <label for="anser-b">Answer b</label>
-        <input type="text" id="anser-b" bind:value={fields.anserB} />
-        <div class="error">{errors.anserB}</div>
+        <input type="text" id="anser-b" bind:value={fields.answerB} />
+        <div class="error">{errors.answerB}</div>
     </div>
     <Button type="secondary" flat={true}>Add Poll</Button>
 </form>

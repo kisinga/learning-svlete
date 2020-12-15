@@ -4,7 +4,7 @@
 	import Tabs from "./shared/Tabs.svelte";
 	import CreatePollForm from "./components/CreatePollForm.svelte";
 	import PollList from "./components/PollList.svelte";
-	import type { poll } from "./shared/Models.svelte";
+	import type { Poll } from "./shared/Models.svelte";
 	// tabs
 	export let items = ["Current Polls", "Add New Poll"];
 	let activeItem = items[0];
@@ -13,7 +13,7 @@
 		activeItem = e.detail;
 	};
 
-	let polls: poll[] = [
+	let polls: Poll[] = [
 		{
 			question: "Golang or Rust",
 			answerA: "Golang",

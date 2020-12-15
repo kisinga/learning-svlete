@@ -1,6 +1,7 @@
 <script type="ts">
-    import type { poll } from "../shared/Models.svelte";
-    export let polls: poll[] = [];
+    import PollDetails from "./PollDetails.svelte";
+    import type { Poll } from "../shared/Models.svelte";
+    export let polls: Poll[] = [];
 </script>
 
 <style>
@@ -12,7 +13,9 @@
 </style>
 
 <div class="poll-list">
-    {#each polls as pollItem (pollItem.id)}
-        <div>{pollItem.question}</div>
+    {#each polls as poll (poll.id)}
+        <div>
+            <PollDetails {poll} />
+        </div>
     {/each}
 </div>

@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-    export type poll = {
+    export type Poll = {
         id: number;
         question: string;
         answerA: string;
