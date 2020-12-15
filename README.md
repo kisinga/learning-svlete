@@ -10,7 +10,7 @@ run `npm i`
 run `npm run start`  
 open your browser and point it to the address provided in the terminal. It something like ` http://localhost:33229`, but the port changes  
 Is it a framework? Is is a compiler? Is it both? To find out I started with [this temmplate](https://github.com/sveltejs/template).
-I am using a nice set of [youtube tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO) by "The Net Ninja"
+I am using a nice set of [youtube tutorials](https://www.youtube.com/playlist?list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO) by "The Net Ninja". I gotta warn you though. This ninja moves fast!
 
 # Impressions (Mostly in Comparison to Angular)
 **Day 1**  
