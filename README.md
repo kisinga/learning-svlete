@@ -16,4 +16,6 @@ I am using a nice set of [youtube tutorials](https://www.youtube.com/playlist?li
 **Day 1**  
 It rebuilds instantly on save. Maybe this is more related to rollup, but still, I dig  
 **Day 3**  
-Coming from angular, its hilarious how familiar this is. The syntax is definitely different, but so far I find it more expressive
+Coming from angular, its hilarious how familiar this is. The syntax is definitely different, but so far I find it more expressive  
+**Day ... I lost count**  
+No built-in form valudation. Dang!
