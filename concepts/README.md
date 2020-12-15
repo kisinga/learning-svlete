@@ -19,3 +19,6 @@ It rebuilds instantly on save. Maybe this is more related to rollup, but still, 
 Coming from angular, its hilarious how familiar this is. The syntax is definitely different, but so far I find it more expressive  
 **Day ... I lost count**  
 No built-in form valudation. Dang!
+
+**(Day ... I lost count)+1**  
+State management is built-in? Sweeet.
