@@ -8,8 +8,8 @@ const PollStore = writable<Poll[]>([
         answerA: "Golang",
         answerB: "Rust",
         id: 0,
-        votesA: 16,
-        votesB: 17,
+        votesA: 3,
+        votesB: 1,
     },
 ])
 
