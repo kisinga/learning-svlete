@@ -1,6 +1,6 @@
 <script type="ts">
     import PollDetails from "./PollDetails.svelte";
-    import type { Poll } from "../shared/Models.svelte";
+    import type { Poll } from "../shared/Models";
     export let polls: Poll[] = [];
 </script>
 

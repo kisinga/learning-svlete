@@ -4,7 +4,6 @@
 	import Tabs from "./shared/Tabs.svelte";
 	import CreatePollForm from "./components/CreatePollForm.svelte";
 	import PollList from "./components/PollList.svelte";
-	import type { Poll } from "./shared/Models.svelte";
 	// tabs
 	export let items = ["Current Polls", "Add New Poll"];
 	let activeItem = items[0];
@@ -13,16 +12,6 @@
 		activeItem = e.detail;
 	};
 
-	let polls: Poll[] = [
-		{
-			question: "Golang or Rust",
-			answerA: "Golang",
-			answerB: "Rust",
-			id: 0,
-			votesA: 15,
-			votesB: 17,
-		},
-	];
 	const handleAdd = (e) => {
 		polls = [e.detail, ...polls];
 		console.log(polls);
@@ -53,7 +42,7 @@
 <main>
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />
 	{#if activeItem === items[0]}
-		<PollList {polls} on:vote={handleVote} />
+		<PollList on:vote={handleVote} />
 	{:else if activeItem === items[1]}
 		<CreatePollForm on:add={handleAdd} />
 	{/if}

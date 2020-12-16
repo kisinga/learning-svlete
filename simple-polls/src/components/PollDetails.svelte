@@ -1,6 +1,6 @@
 <script type="ts">
     import { createEventDispatcher } from "svelte";
-    import type { Poll } from "../shared/Models.svelte";
+    import type { Poll } from "../shared/Models";
     import Card from "../shared/Card.svelte";
     const dispatch = createEventDispatcher();
 

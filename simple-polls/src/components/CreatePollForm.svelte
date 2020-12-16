@@ -4,7 +4,7 @@
     let dispatch = createEventDispatcher();
 
     import Button from "../shared/Button.svelte";
-    import type { Poll } from "../shared/Models.svelte";
+    import type { Poll } from "../shared/Models";
 
     let fields: Poll = {
         question: "",
