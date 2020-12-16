@@ -1,3 +1,4 @@
+
 import { writable } from "svelte/store"
 import type { Poll } from "../shared/Models";
 
@@ -7,7 +8,7 @@ const PollStore = writable<Poll[]>([
         answerA: "Golang",
         answerB: "Rust",
         id: 0,
-        votesA: 15,
+        votesA: 16,
         votesB: 17,
     },
 ])

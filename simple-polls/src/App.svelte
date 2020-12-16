@@ -4,6 +4,7 @@
 	import Tabs from "./shared/Tabs.svelte";
 	import CreatePollForm from "./components/CreatePollForm.svelte";
 	import PollList from "./components/PollList.svelte";
+
 	// tabs
 	export let items = ["Current Polls", "Add New Poll"];
 	let activeItem = items[0];
@@ -12,21 +13,8 @@
 		activeItem = e.detail;
 	};
 
-	const handleAdd = (e) => {
-		polls = [e.detail, ...polls];
-		console.log(polls);
+	const handleAdd = () => {
 		activeItem = items[0];
-	};
-	const handleVote = (e) => {
-		const { id, option } = e.detail;
-		let copy = [...polls];
-		let upvotedPoll = copy.find((poll) => poll.id == id);
-		if (option === "a") {
-			upvotedPoll.votesA++;
-		} else {
-			upvotedPoll.votesB++;
-		}
-		polls = copy;
 	};
 </script>
 
@@ -42,7 +30,7 @@
 <main>
 	<Tabs {activeItem} {items} on:tabChange={tabChange} />
 	{#if activeItem === items[0]}
-		<PollList on:vote={handleVote} />
+		<PollList />
 	{:else if activeItem === items[1]}
 		<CreatePollForm on:add={handleAdd} />
 	{/if}
