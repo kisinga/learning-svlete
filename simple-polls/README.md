@@ -5,3 +5,6 @@ Built using [Svelte](https://svelte.dev)
 
 # structure
 ![structure](/simple-polls/assets/structure.png)
+
+  
+![polls](/simple-polls/assets/screenshots/recording.gif)

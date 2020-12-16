@@ -22,3 +22,7 @@ No built-in form valudation. Dang!
 
 **(Day ... I lost count)+1**  
 State management is built-in? Sweeet.
+  
+  
+**Project 1**
+![polls](/simple-polls/assets/screenshots/recording.gif)
